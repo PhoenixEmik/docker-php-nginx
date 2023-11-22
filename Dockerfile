@@ -5,7 +5,6 @@ LABEL Description="Nginx & PHP based on Alpine Linux."
 WORKDIR /var/www/html
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
-  && apk update \
   && apk add --no-cache \
     nginx \
     php7 \
@@ -28,7 +27,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     php7-xmlreader \
     php7-xmlwriter
 
-COPY --chmod=+x docker-entrypoint.sh /usr/local/bin/
+COPY docker-entrypoint.sh /usr/local/bin/
 
 # Configure nginx - http
 COPY etc/nginx.conf /etc/nginx/nginx.conf

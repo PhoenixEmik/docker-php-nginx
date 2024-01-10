@@ -25,7 +25,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     php7-session \
     php7-xml \
     php7-xmlreader \
-    php7-xmlwriter
+    php7-xmlwriter \
+    php7-json
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
